@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.CalendarController">
+    <MenuBar VBox.vgrow="NEVER">
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem mnemonicParsing="false" text="New"/>
+            <MenuItem mnemonicParsing="false" text="Open…"/>
+            <SeparatorMenuItem mnemonicParsing="false"/>
+            <MenuItem mnemonicParsing="false" text="Close"/>
+            <MenuItem mnemonicParsing="false" text="Save"/>
+            <MenuItem mnemonicParsing="false" text="Save As…"/>
+            <SeparatorMenuItem mnemonicParsing="false"/>
+            <MenuItem mnemonicParsing="false" text="Print..."/>
+            <SeparatorMenuItem mnemonicParsing="false"/>
+            <MenuItem mnemonicParsing="false" text="Quit"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Options">
+            <MenuItem mnemonicParsing="false" onAction="#ShowCreateBack" text="Create Bank"/>
+            <MenuItem mnemonicParsing="false" text="Delete Back"/>
+            <SeparatorMenuItem mnemonicParsing="false"/>
+            <MenuItem mnemonicParsing="false" text="Add Asignation"/>
+            <MenuItem mnemonicParsing="false" text="Remove Asignation"/>
+            <MenuItem mnemonicParsing="false" text="Paste"/>
+            <MenuItem mnemonicParsing="false" text="Delete"/>
+            <SeparatorMenuItem mnemonicParsing="false"/>
+            <MenuItem mnemonicParsing="false" text="Select All"/>
+            <MenuItem mnemonicParsing="false" text="Unselect All"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp"/>
+        </Menu>
+    </MenuBar>
+    <AnchorPane  VBox.vgrow="ALWAYS">
+        <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <center>
+                <GridPane BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <GridPane alignment="TOP_CENTER" gridLinesVisible="true" GridPane.hgrow="NEVER"
+                              GridPane.vgrow="NEVER">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                        </rowConstraints>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
+                            <FlowPane prefHeight="38.0" prefWidth="172.0">
+                                <VBox.margin>
+                                    <Insets/>
+                                </VBox.margin>
+                                <Label fx:id="dia0" text="23">
+                                    <font>
+                                        <Font size="34.0"/>
+                                    </font>
+                                    <opaqueInsets>
+                                        <Insets/>
+                                    </opaqueInsets>
+                                    <FlowPane.margin>
+                                        <Insets left="4.0" right="4.0"/>
+                                    </FlowPane.margin>
+                                </Label>
+                                <Label fx:id="titulo0" text="Titulo">
+                                    <font>
+                                        <Font size="34.0"/>
+                                    </font>
+                                </Label>
+                            </FlowPane>
+                            <AnchorPane>
+                                <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0"
+                                      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                      AnchorPane.topAnchor="0.0">
+                                    <Label text="copu popu"/>
+                                    <Label text="mot: 25000"/>
+                                </VBox>
+                            </AnchorPane>
+                            <AnchorPane>
+                                <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0"
+                                      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                      AnchorPane.topAnchor="0.0">
+                                    <Label text="copu popu"/>
+                                    <Label text="mot: 28000"/>
+                                </VBox>
+                            </AnchorPane>
+                            <AnchorPane>
+                                <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0"
+                                      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                      AnchorPane.topAnchor="0.0">
+                                    <Label text="copu popu"/>
+                                    <Label text="mot: 280040"/>
+                                </VBox>
+                            </AnchorPane>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="2" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="3" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="4" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="5" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                    </GridPane>
+                    <GridPane gridLinesVisible="true" GridPane.columnIndex="1" GridPane.hgrow="NEVER"
+                              GridPane.vgrow="NEVER">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                        </rowConstraints>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="2" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="3" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="4" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="5" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                    </GridPane>
+                    <GridPane gridLinesVisible="true" GridPane.columnIndex="2" GridPane.hgrow="NEVER"
+                              GridPane.vgrow="NEVER">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                        </rowConstraints>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="2" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="3" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="4" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="5" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                    </GridPane>
+                    <GridPane gridLinesVisible="true" GridPane.columnIndex="3" GridPane.hgrow="NEVER"
+                              GridPane.vgrow="NEVER">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                        </rowConstraints>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="2" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="3" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="4" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="5" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                    </GridPane>
+                    <GridPane gridLinesVisible="true" GridPane.columnIndex="4" GridPane.hgrow="NEVER"
+                              GridPane.vgrow="NEVER">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                        </rowConstraints>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="2" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="3" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="4" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="5" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                    </GridPane>
+                    <GridPane gridLinesVisible="true" GridPane.columnIndex="5" GridPane.hgrow="NEVER"
+                              GridPane.vgrow="NEVER">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                        </rowConstraints>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="2" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="3" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="4" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="5" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                    </GridPane>
+                    <GridPane gridLinesVisible="true" GridPane.columnIndex="6" GridPane.hgrow="NEVER"
+                              GridPane.vgrow="NEVER">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                        </rowConstraints>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="2" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="3" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="4" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
+                              GridPane.rowIndex="5" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
+                    </GridPane>
+                </GridPane>
+            </center>
+            <top>
+                <GridPane style="-fx-background-color: #000;" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0"
+                               text="DOMINGO" textAlignment="CENTER" textFill="WHITE"
+                               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <font>
+                                <Font name="System Bold" size="16.0"/>
+                            </font>
+                        </Label>
+                    </AnchorPane>
+                    <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0"
+                               text="LUNES" textAlignment="CENTER" textFill="WHITE"
+                               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <font>
+                                <Font name="System Bold" size="16.0"/>
+                            </font>
+                        </Label>
+                    </AnchorPane>
+                    <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0"
+                               text="MARTES" textAlignment="CENTER" textFill="WHITE"
+                               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <font>
+                                <Font name="System Bold" size="16.0"/>
+                            </font>
+                        </Label>
+                    </AnchorPane>
+                    <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0"
+                               text="MIERCOLES" textAlignment="CENTER" textFill="WHITE"
+                               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <font>
+                                <Font name="System Bold" size="16.0"/>
+                            </font>
+                        </Label>
+                    </AnchorPane>
+                    <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0"
+                               text="JUEVES" textAlignment="CENTER" textFill="WHITE"
+                               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <font>
+                                <Font name="System Bold" size="16.0"/>
+                            </font>
+                        </Label>
+                    </AnchorPane>
+                    <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0"
+                               text="VIERNES" textAlignment="CENTER" textFill="WHITE"
+                               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <font>
+                                <Font name="System Bold" size="16.0"/>
+                            </font>
+                        </Label>
+                    </AnchorPane>
+                    <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0"
+                               text="SABADO" textAlignment="CENTER" textFill="WHITE"
+                               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <font>
+                                <Font name="System Bold" size="16.0"/>
+                            </font>
+                        </Label>
+                    </AnchorPane>
+                </GridPane>
+            </top>
+        </BorderPane>
+    </AnchorPane>
+</VBox>
