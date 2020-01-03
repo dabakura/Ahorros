@@ -1,17 +1,14 @@
+import controllers.StageInitService;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 
+
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("views/Calendar/Calendar.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 1200, 700));
-        primaryStage.show();
+    public void start(Stage primaryStage) {
+        StageInitService sceneInitService = new StageInitService();
+        sceneInitService.init(primaryStage);
     }
 
 
