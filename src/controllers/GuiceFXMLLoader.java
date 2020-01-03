@@ -7,6 +7,9 @@ import javax.inject.Inject;
 
 class GuiceFXMLLoader {
     private final Injector injector;
+    private FXMLLoader loader;
+
+    FXMLLoader getLoader() { return this.loader; }
 
     @Inject
     GuiceFXMLLoader(Injector injector) {
@@ -16,12 +19,12 @@ class GuiceFXMLLoader {
     // Load some FXML file, using the supplied Controller, and return the
     // instance of the initialized controller...?
     Object load(String url, Class<?> controller) {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setControllerFactory(injector::getInstance);
+        this.loader = new FXMLLoader();
+        this.loader.setControllerFactory(injector::getInstance);
         InputStream in = null;
         try {
             in = controller.getResourceAsStream(url);
-            return loader.load(in);
+            return this.loader.load(in);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<DialogPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="300.0" minWidth="480.0" prefHeight="300.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BackController">
+    <header>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="81.0" prefWidth="480.0" style="-fx-background-color: #444;">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="33.0" prefHeight="16.0" prefWidth="333.0" text="Ingrese la Información " textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <font>
+                    <Font size="20.0" />
+                </font>
+            </Label>
+        </AnchorPane>
+    </header>
+    <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0">
+            <GridPane layoutX="100.0" layoutY="37.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="35.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <Label prefHeight="16.0" prefWidth="100.0" text="Nombre">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Label prefHeight="16.0" prefWidth="100.0" text="Alias" GridPane.rowIndex="1">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="name_input" GridPane.columnIndex="1" />
+                <TextField fx:id="nick_input" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            </GridPane>
+        </AnchorPane>
+    </content>
+    <ButtonType fx:constant="APPLY" />
+    <ButtonType fx:constant="CANCEL" />
+</DialogPane>
