@@ -1,7 +1,7 @@
 package controllers;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import controllers.Back.BackController;
+import controllers.Bank.BankController;
 import controllers.Calendar.CalendarController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -34,8 +34,8 @@ public class StageInitService {
     }
 
     public static void ShowBank() {
-        // Ask to load the Back.fxml file, injecting an instance of a BackController
-        DialogPane root = (DialogPane) loader.load("/views/Back/Back.fxml", BackController.class);
+        // Ask to load the Bank.fxml file, injecting an instance of a BackController
+        DialogPane root = (DialogPane) loader.load("/views/Bank/Bank.fxml", BankController.class);
         // Finish constructing the scene
         final Scene scene = new Scene(root, 480, 300);
         // Create the dialog Stage.
@@ -45,7 +45,7 @@ public class StageInitService {
         dialogStage.setResizable(false);
         // Get controller
         FXMLLoader load = loader.getLoader();
-        BackController controller = load.getController();
+        BankController controller = load.getController();
         controller.setDialogStage(dialogStage);
         // Add Event Handler.
         root.lookupButton(ButtonType.APPLY).addEventHandler(ActionEvent.ACTION, e -> {

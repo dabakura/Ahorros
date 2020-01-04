@@ -1,4 +1,4 @@
-package controllers.Back;
+package controllers.Bank;
 
 import com.google.inject.Inject;
 import controllers.Storage;
@@ -9,14 +9,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import models.Bank;
-import models.BankSimple;
 
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
-public class BackController {
+public class BankController {
 
     @FXML
     private TextField name_input;
@@ -50,7 +47,7 @@ public class BackController {
      * @param store - Storage Data
      */
     @Inject
-    public BackController(Storage store, IOFileSerializable ioFileSerializable) {
+    public BankController(Storage store, IOFileSerializable ioFileSerializable) {
         this.store = store;
         this.ioFileSerializable = ioFileSerializable;
     }
