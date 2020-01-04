@@ -21,4 +21,7 @@ public class Storage implements IStorage {
     public Set<Bank> getBanks() {
         return Banks;
     }
+    public Set<Bank> getBanksSimple() {
+        return Banks;
+    }
 }

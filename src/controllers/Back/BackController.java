@@ -2,11 +2,19 @@ package controllers.Back;
 
 import com.google.inject.Inject;
 import controllers.Storage;
+import helpers.Alerts;
+import helpers.ConvertToSerializer;
+import helpers.IOFileSerializable;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import models.Bank;
+import models.BankSimple;
+
+import java.io.IOException;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class BackController {
 
@@ -33,7 +41,7 @@ public class BackController {
 
     private final Storage store;
 
-
+    private final IOFileSerializable ioFileSerializable;
 
     /**
      * Notice this constructor is using JSR 330 Inject annotation,
@@ -42,8 +50,9 @@ public class BackController {
      * @param store - Storage Data
      */
     @Inject
-    public BackController(Storage store) {
+    public BackController(Storage store, IOFileSerializable ioFileSerializable) {
         this.store = store;
+        this.ioFileSerializable = ioFileSerializable;
     }
 
     /**
@@ -55,13 +64,27 @@ public class BackController {
         if (isInputValid()) {
             this.store.getBanks().add(this.bank);
             dialogStage.close();
-        } else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Falta información que completar");
-            alert.setHeaderText("Todos los campos son necesarios");
-            alert.setContentText(this.messageError);
-            alert.show();
-        }
+            try {
+                ioFileSerializable.Export(
+                        ConvertToSerializer.ConvertToBankSimpleList(this.store.getBanks()),"Bancos"
+                );
+                Set<Bank> let = ConvertToSerializer.ConvertToBankList(
+                        ioFileSerializable.ImportBacks("Bancos")
+                );
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+                Alerts.Error(
+                        "Un error ha ocurrido",
+                        "No se puede gusrdar lista de bancos",
+                        "Puede ser que el documento este dañado"
+                );
+            }
+        } else
+            Alerts.Error(
+                    "Falta información que completar",
+                    "Falta información que completar",
+                    "Todos los campos son necesarios"
+            );
     }
 
     /**
