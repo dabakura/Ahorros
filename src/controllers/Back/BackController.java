@@ -1,6 +1,7 @@
-package controllers;
+package controllers.Back;
 
 import com.google.inject.Inject;
+import controllers.Storage;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
@@ -26,7 +27,7 @@ public class BackController {
      *
      * @param dialogStage - Windows primary
      */
-    void setDialogStage(Stage dialogStage) {
+    public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
     }
 
@@ -48,7 +49,7 @@ public class BackController {
     /**
      * Called when the user clicks ok.
      */
-    void handleApply() {
+    public void handleApply() {
         this.bank.setName(name_input.getText());
         this.bank.setNick(nick_input.getText());
         if (isInputValid()) {
@@ -66,7 +67,7 @@ public class BackController {
     /**
      * Called when the user clicks cancel.
      */
-    void handleCancel() {
+    public void handleCancel() {
         dialogStage.close();
     }
 

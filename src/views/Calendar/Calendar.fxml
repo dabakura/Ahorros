@@ -1,69 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SeparatorMenuItem?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="controllers.CalendarController">
-    <MenuBar VBox.vgrow="NEVER">
-        <Menu mnemonicParsing="false" text="File">
-            <MenuItem mnemonicParsing="false" text="New"/>
-            <MenuItem mnemonicParsing="false" text="Open…"/>
-            <SeparatorMenuItem mnemonicParsing="false"/>
-            <MenuItem mnemonicParsing="false" text="Close"/>
-            <MenuItem mnemonicParsing="false" text="Save"/>
-            <MenuItem mnemonicParsing="false" text="Save As…"/>
-            <SeparatorMenuItem mnemonicParsing="false"/>
-            <MenuItem mnemonicParsing="false" text="Print..."/>
-            <SeparatorMenuItem mnemonicParsing="false"/>
-            <MenuItem mnemonicParsing="false" text="Quit"/>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Options">
-            <MenuItem mnemonicParsing="false" onAction="#ShowCreateBack" text="Create Bank"/>
-            <MenuItem mnemonicParsing="false" text="Delete Back"/>
-            <SeparatorMenuItem mnemonicParsing="false"/>
-            <MenuItem mnemonicParsing="false" text="Add Asignation"/>
-            <MenuItem mnemonicParsing="false" text="Remove Asignation"/>
-            <MenuItem mnemonicParsing="false" text="Paste"/>
-            <MenuItem mnemonicParsing="false" text="Delete"/>
-            <SeparatorMenuItem mnemonicParsing="false"/>
-            <MenuItem mnemonicParsing="false" text="Select All"/>
-            <MenuItem mnemonicParsing="false" text="Unselect All"/>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Help">
-            <MenuItem mnemonicParsing="false" text="About MyHelloApp"/>
-        </Menu>
-    </MenuBar>
-    <AnchorPane  VBox.vgrow="ALWAYS">
-        <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<VBox prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Calendar.CalendarController">
+   <GridPane>
+     <columnConstraints>
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+       <ColumnConstraints hgrow="NEVER" minWidth="168.0" prefWidth="100.0" />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+          <MenuBar>
+              <Menu mnemonicParsing="false" text="Archivo">
+                  <MenuItem mnemonicParsing="false" onAction="#NewAction" text="Nuevo" />
+                  <MenuItem mnemonicParsing="false" text="Abrir…" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Cerrar" />
+                  <MenuItem mnemonicParsing="false" text="Salvar" />
+                  <MenuItem mnemonicParsing="false" text="Salvar Como" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Imprimir" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Salir" />
+              </Menu>
+              <Menu mnemonicParsing="false" text="Opciones">
+                  <MenuItem mnemonicParsing="false" onAction="#ShowCreateBack" text="Crear Banco" />
+                  <MenuItem mnemonicParsing="false" text="Eliminar Banco" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Agregar Cupón" />
+                  <MenuItem mnemonicParsing="false" text="Eliminar Cupón" />
+                  <MenuItem mnemonicParsing="false" text="Paste" />
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Select All" />
+                  <MenuItem mnemonicParsing="false" text="Unselect All" />
+              </Menu>
+              <Menu mnemonicParsing="false" text="Ayuda">
+                  <MenuItem mnemonicParsing="false" text="Acerca de..." />
+              </Menu>
+          </MenuBar>
+         <ToolBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <SplitMenuButton fx:id="moth_menu" maxWidth="155.0" minWidth="151.0" mnemonicParsing="false" prefWidth="151.0" text="Seleccionar Mes">
+                 <items>
+                     <MenuItem mnemonicParsing="false" onAction="#SelectMoth" text="Enero" />
+                     <MenuItem mnemonicParsing="false" onAction="#SelectMoth" text="Febrero" />
+                     <MenuItem mnemonicParsing="false" onAction="#SelectMoth" text="Marzo" />
+                     <MenuItem mnemonicParsing="false" onAction="#SelectMoth" text="Abril" />
+                     <MenuItem mnemonicParsing="false" onAction="#SelectMoth" text="Mayo" />
+                     <MenuItem mnemonicParsing="false" onAction="#SelectMoth" text="Junio" />
+                   <MenuItem mnemonicParsing="false" onAction="#SelectMoth" text="Julio" />
+                   <MenuItem mnemonicParsing="false" onAction="#SelectMoth" text="Agosto" />
+                     <MenuItem mnemonicParsing="false" onAction="#SelectMoth" text="Septiembre" />
+                     <MenuItem mnemonicParsing="false" onAction="#SelectMoth" text="Octubre" />
+                     <MenuItem mnemonicParsing="false" onAction="#SelectMoth" text="Noviembre" />
+                     <MenuItem mnemonicParsing="false" onAction="#SelectMoth" text="Diciembre" />
+                     <MenuItem mnemonicParsing="false" onAction="#SelectMoth" text="Nuevo Año" />
+                 </items>
+               </SplitMenuButton>
+         </ToolBar>
+   </GridPane>
+    <AnchorPane VBox.vgrow="ALWAYS">
+        <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <center>
-                <GridPane BorderPane.alignment="CENTER">
+                <GridPane fx:id="container_grid" BorderPane.alignment="CENTER">
                     <columnConstraints>
-                        <ColumnConstraints hgrow="ALWAYS"/>
-                        <ColumnConstraints hgrow="ALWAYS"/>
-                        <ColumnConstraints hgrow="ALWAYS"/>
-                        <ColumnConstraints hgrow="ALWAYS"/>
-                        <ColumnConstraints hgrow="ALWAYS"/>
-                        <ColumnConstraints hgrow="ALWAYS"/>
-                        <ColumnConstraints hgrow="ALWAYS"/>
+                        <ColumnConstraints hgrow="ALWAYS" />
+                        <ColumnConstraints hgrow="ALWAYS" />
+                        <ColumnConstraints hgrow="ALWAYS" />
+                        <ColumnConstraints hgrow="ALWAYS" />
+                        <ColumnConstraints hgrow="ALWAYS" />
+                        <ColumnConstraints hgrow="ALWAYS" />
+                        <ColumnConstraints hgrow="ALWAYS" />
                     </columnConstraints>
                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
-                    <GridPane alignment="TOP_CENTER" gridLinesVisible="true" GridPane.hgrow="NEVER"
+                   <!-- <GridPane alignment="TOP_CENTER" gridLinesVisible="true" GridPane.hgrow="NEVER"
                               GridPane.vgrow="NEVER">
                         <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
@@ -290,90 +305,69 @@
                               GridPane.rowIndex="4" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
                         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
                               GridPane.rowIndex="5" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES"/>
-                    </GridPane>
+                    </GridPane>-->
                 </GridPane>
             </center>
             <top>
                 <GridPane style="-fx-background-color: #000;" BorderPane.alignment="CENTER">
                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0"
-                               text="DOMINGO" textAlignment="CENTER" textFill="WHITE"
-                               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0" text="DOMINGO" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <font>
-                                <Font name="System Bold" size="16.0"/>
+                                <Font name="System Bold" size="16.0" />
                             </font>
                         </Label>
                     </AnchorPane>
                     <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0"
-                               text="LUNES" textAlignment="CENTER" textFill="WHITE"
-                               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0" text="LUNES" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <font>
-                                <Font name="System Bold" size="16.0"/>
+                                <Font name="System Bold" size="16.0" />
                             </font>
                         </Label>
                     </AnchorPane>
                     <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0"
-                               text="MARTES" textAlignment="CENTER" textFill="WHITE"
-                               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0" text="MARTES" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <font>
-                                <Font name="System Bold" size="16.0"/>
+                                <Font name="System Bold" size="16.0" />
                             </font>
                         </Label>
                     </AnchorPane>
                     <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0"
-                               text="MIERCOLES" textAlignment="CENTER" textFill="WHITE"
-                               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0" text="MIERCOLES" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <font>
-                                <Font name="System Bold" size="16.0"/>
+                                <Font name="System Bold" size="16.0" />
                             </font>
                         </Label>
                     </AnchorPane>
                     <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0"
-                               text="JUEVES" textAlignment="CENTER" textFill="WHITE"
-                               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0" text="JUEVES" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <font>
-                                <Font name="System Bold" size="16.0"/>
+                                <Font name="System Bold" size="16.0" />
                             </font>
                         </Label>
                     </AnchorPane>
                     <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5">
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0"
-                               text="VIERNES" textAlignment="CENTER" textFill="WHITE"
-                               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0" text="VIERNES" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <font>
-                                <Font name="System Bold" size="16.0"/>
+                                <Font name="System Bold" size="16.0" />
                             </font>
                         </Label>
                     </AnchorPane>
                     <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6">
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0"
-                               text="SABADO" textAlignment="CENTER" textFill="WHITE"
-                               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="8.0" text="SABADO" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <font>
-                                <Font name="System Bold" size="16.0"/>
+                                <Font name="System Bold" size="16.0" />
                             </font>
                         </Label>
                     </AnchorPane>

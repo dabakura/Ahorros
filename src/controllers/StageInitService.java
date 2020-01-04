@@ -1,6 +1,8 @@
 package controllers;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import controllers.Back.BackController;
+import controllers.Calendar.CalendarController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -31,7 +33,7 @@ public class StageInitService {
         stage.show();
     }
 
-    static void ShowBank() {
+    public static void ShowBank() {
         // Ask to load the Back.fxml file, injecting an instance of a BackController
         DialogPane root = (DialogPane) loader.load("/views/Back/Back.fxml", BackController.class);
         // Finish constructing the scene
