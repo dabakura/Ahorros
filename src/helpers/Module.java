@@ -1,8 +1,8 @@
-package controllers;
+package helpers;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Singleton;
-import helpers.IOFileSerializable;
+import models.Storage;
 
 /**
  *

@@ -3,6 +3,7 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import controllers.Bank.BankController;
 import controllers.Calendar.CalendarController;
+import helpers.GuiceFXMLLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,6 +11,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
 import javafx.stage.Stage;
+import helpers.Module;
+import models.MatrixCalendar;
 
 /**
  * @author David
@@ -18,6 +21,10 @@ import javafx.stage.Stage;
 public class StageInitService {
     private static final Injector injector = Guice.createInjector(new Module());
     private static final GuiceFXMLLoader loader = new GuiceFXMLLoader(injector);
+
+    public static GuiceFXMLLoader GetLoader(){
+        return loader;
+    }
 
     public void init(Stage stage) {
         // Ask to load the Calendar.fxml file, injecting an instance of a CalendarController

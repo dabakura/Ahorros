@@ -1,20 +1,29 @@
 package controllers.Calendar;
 
-import helpers.Moth;
+import com.google.inject.Inject;
+import helpers.Month;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
-import models.ModelCalendarComponent;
+import models.*;
 
-import javax.naming.InitialContext;
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-public class CalendarContainerController {
+public class CalendarContainerController implements ICalendarObserver {
 
     private LinkedList<ModelCalendarComponent> models;
+
+    private Month month;
+
+    private int position;
+
+    private final Storage store;
 
     private VBox[] Contenedor;
     @FXML
@@ -71,6 +80,11 @@ public class CalendarContainerController {
     @FXML
     private Label titulo5;
 
+    @Inject
+    public CalendarContainerController(Storage store) {
+        this.store = store;
+    }
+
     @FXML
     public void initialize() {
         this.models = new LinkedList<>(Arrays.asList(new ModelCalendarComponent(this.dia0,this.titulo0),
@@ -79,15 +93,54 @@ public class CalendarContainerController {
                 new ModelCalendarComponent(this.dia3,this.titulo3),
                 new ModelCalendarComponent(this.dia4,this.titulo4),
                 new ModelCalendarComponent(this.dia5,this.titulo5)));
+        this.Contenedor = new VBox[]{vbox_0,vbox_1,vbox_2,vbox_3,vbox_4,vbox_5};
     }
 
-    void InitialContent(int position,int[][] matriz, int moth){
+    void InitialContent(int position, CalendarItem[][] matrix, Month month){
+        this.month = month;
+        this.position = position;
+        this.refresh(matrix);
+        this.store.getCalendarMatrix().ChangeSubscribe(this);
+    }
+
+    private void refresh(CalendarItem[][] matrix){
         for (int i = 0; i < models.size(); i++) {
-            models.get(i).getTitle().setText((matriz[i][position]==0)?"":(matriz[i][position]+""));
-            //models[i].getContent().setText("-");
+            models.get(i).getContent().setText("");
+            if (matrix[i][this.position].get_active()){
+                if(matrix[i][this.position].get_title())
+                    models.get(i).getContent().setText("Titulo");
+            }
+            models.get(i).getTitle().setText(matrix[i][this.position].get_day());
+            bodyFill(matrix[i][this.position].get_models(),i);
         }
-        if (position==6)
-            models.getLast().getTitle().setText(Moth.getMoth(moth));
+        if (this.position==6)
+            models.getLast().getTitle().setText(this.month.getMonth());
     }
 
+    private void bodyFill (List<ModelCalendarComponent> mcc, int index) {
+        this.Contenedor[index].getChildren().removeIf(node -> node instanceof AnchorPane );
+        mcc.forEach(m -> {
+            FXMLLoader fxmlLoader = new FXMLLoader(
+                    getClass().getResource("../../views/Calendar/CalendarComponent.fxml"));
+            try {
+                Parent root = fxmlLoader.load();
+                CalendarComponentController mainController = fxmlLoader.getController();
+                mainController.InitialContent(m);
+                this.Contenedor[index].getChildren().add(root);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    @Override
+    public void CalendarListener() {
+        CalendarItem[][] matrix = this.store.getCalendarMatrix().getCalendarMatrix(this.month);
+        this.refresh(matrix);
+    }
+
+    @Override
+    public Month getMonth() {
+        return this.month;
+    }
 }

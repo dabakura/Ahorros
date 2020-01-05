@@ -1,7 +1,10 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public interface IStorage {
-    Set<Bank> getBanks();
+    ListBank getBanks();
+    MatrixCalendar getCalendarMatrix();
 }

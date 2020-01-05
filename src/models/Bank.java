@@ -2,10 +2,12 @@ package models;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import java.util.List;
 
 public class Bank {
     private final StringProperty Name;
     private final StringProperty Nick;
+    private List<IBanksObserver> observers;
 
     public Bank() {
         this.Name = new SimpleStringProperty(null);
@@ -22,6 +24,8 @@ public class Bank {
     }
 
     public void setNick(String nick) {
+        if(this.observers!=null)
+            this.observers.forEach(IBanksObserver::BankListener);
         this.Nick.set(nick);
     }
 
@@ -34,6 +38,8 @@ public class Bank {
     }
 
     public void setName(String name) {
+        if(this.observers!=null)
+            this.observers.forEach(IBanksObserver::BankListener);
         this.Name.set(name);
     }
 
@@ -41,6 +47,9 @@ public class Bank {
         return Name;
     }
 
+    public void setObservers(List<IBanksObserver> observers) {
+        this.observers = observers;
+    }
 
     @Override
     public boolean equals(Object obj) {

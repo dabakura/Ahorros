@@ -14,6 +14,14 @@ public class ModelCalendarComponent {
         Title = title;
         Content = content;
     }
+
+    public ModelCalendarComponent(String title, String content){
+        Title = new Label();
+        Content = new Label();
+        Title.setText(title);
+        Content.setText(content);
+    }
+
     public Label getTitle() {
         return Title;
     }

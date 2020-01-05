@@ -39,11 +39,11 @@
                   <MenuItem mnemonicParsing="false" text="Unselect All" />
               </Menu>
               <Menu mnemonicParsing="false" text="Ayuda">
-                  <MenuItem mnemonicParsing="false" text="Acerca de..." />
+                  <MenuItem mnemonicParsing="false" onAction="#Test" text="Acerca de..." />
               </Menu>
           </MenuBar>
          <ToolBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1">
-               <SplitMenuButton fx:id="moth_menu" maxWidth="155.0" minWidth="151.0" mnemonicParsing="false" prefWidth="151.0" text="Seleccionar Mes">
+               <SplitMenuButton fx:id="month_menu" maxWidth="155.0" minWidth="151.0" mnemonicParsing="false" prefWidth="151.0" text="Seleccionar Mes">
                  <items>
                      <MenuItem mnemonicParsing="false" onAction="#SelectMoth" text="Enero" />
                      <MenuItem mnemonicParsing="false" onAction="#SelectMoth" text="Febrero" />

@@ -1,24 +1,24 @@
-package controllers;
+package helpers;
 
 import com.google.inject.Injector;
 import java.io.InputStream;
 import javafx.fxml.FXMLLoader;
 import javax.inject.Inject;
 
-class GuiceFXMLLoader {
+public class GuiceFXMLLoader {
     private final Injector injector;
     private FXMLLoader loader;
 
-    FXMLLoader getLoader() { return this.loader; }
+    public FXMLLoader getLoader() { return this.loader; }
 
     @Inject
-    GuiceFXMLLoader(Injector injector) {
+    public GuiceFXMLLoader(Injector injector) {
         this.injector = injector;
     }
 
     // Load some FXML file, using the supplied Controller, and return the
     // instance of the initialized controller...?
-    Object load(String url, Class<?> controller) {
+    public Object load(String url, Class<?> controller) {
         this.loader = new FXMLLoader();
         this.loader.setControllerFactory(injector::getInstance);
         InputStream in = null;

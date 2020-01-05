@@ -1,7 +1,7 @@
 package controllers.Bank;
 
 import com.google.inject.Inject;
-import controllers.Storage;
+import models.Storage;
 import helpers.Alerts;
 import helpers.ConvertToSerializer;
 import helpers.IOFileSerializable;
@@ -80,7 +80,7 @@ public class BankController {
             Alerts.Error(
                     "Falta información que completar",
                     "Falta información que completar",
-                    "Todos los campos son necesarios"
+                    this.messageError
             );
     }
 
