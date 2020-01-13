@@ -120,16 +120,7 @@ public class CalendarContainerController implements ICalendarObserver {
     private void bodyFill (List<ModelCalendarComponent> mcc, int index) {
         this.Contenedor[index].getChildren().removeIf(node -> node instanceof AnchorPane );
         mcc.forEach(m -> {
-            FXMLLoader fxmlLoader = new FXMLLoader(
-                    getClass().getResource("../../views/Calendar/CalendarComponent.fxml"));
-            try {
-                Parent root = fxmlLoader.load();
-                CalendarComponentController mainController = fxmlLoader.getController();
-                mainController.InitialContent(m);
-                this.Contenedor[index].getChildren().add(root);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            this.Contenedor[index].getChildren().add(m.getNode());
         });
     }
 

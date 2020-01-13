@@ -3,13 +3,16 @@ package controllers.Calendar;
 import com.google.inject.Inject;
 import controllers.StageInitService;
 import helpers.GuiceFXMLLoader;
+import helpers.Snapshot;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.SnapshotParameters;
+import javafx.scene.image.WritableImage;
+import javafx.scene.layout.AnchorPane;
 import models.CalendarItem;
-import models.ICalendarObserver;
 import models.Storage;
 import helpers.Month;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SplitMenuButton;
@@ -23,6 +26,9 @@ public class CalendarController {
 
     @FXML
     private SplitMenuButton month_menu;
+
+    @FXML
+    private AnchorPane Principal_Content;
 
     private final Storage store;
 
@@ -60,9 +66,6 @@ public class CalendarController {
         container_grid.getChildren().clear();
         GuiceFXMLLoader loader = StageInitService.GetLoader();
         for (int i = 0; i < 7; i++) {
-            /*FXMLLoader fxmlLoader = new FXMLLoader(
-                    getClass().getResource("../../views/Calendar/CalendarContainer.fxml"));
-            Parent root = fxmlLoader.load();*/
             Parent root = (Parent) loader.load("../../views/Calendar/CalendarContainer.fxml",CalendarContainerController.class);
             CalendarContainerController mainController = loader.getLoader().getController();
             mainController.InitialContent(i,matrix,month);
@@ -75,4 +78,10 @@ public class CalendarController {
     void Test(ActionEvent event) {
         this.store.getCalendarMatrix().Test();
     }
+
+    @FXML
+    void Print(ActionEvent event) {
+        Snapshot.CaptureAndSaveDisplay(this.Principal_Content, this.month.getMonth());
+    }
+
 }

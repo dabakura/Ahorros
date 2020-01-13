@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Calendar.CalendarController">
+<VBox maxHeight="594.0" maxWidth="842.0" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Calendar.CalendarController">
    <GridPane>
      <columnConstraints>
        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -22,7 +22,7 @@
                   <MenuItem mnemonicParsing="false" text="Salvar" />
                   <MenuItem mnemonicParsing="false" text="Salvar Como" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Imprimir" />
+                  <MenuItem mnemonicParsing="false" onAction="#Print" text="Imprimir" />
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" text="Salir" />
               </Menu>
@@ -62,7 +62,7 @@
                </SplitMenuButton>
          </ToolBar>
    </GridPane>
-    <AnchorPane VBox.vgrow="ALWAYS">
+    <AnchorPane fx:id="Principal_Content" VBox.vgrow="ALWAYS">
         <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <center>
                 <GridPane fx:id="container_grid" BorderPane.alignment="CENTER">

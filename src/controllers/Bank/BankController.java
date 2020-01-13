@@ -1,6 +1,7 @@
 package controllers.Bank;
 
 import com.google.inject.Inject;
+import helpers.Path;
 import models.Storage;
 import helpers.Alerts;
 import helpers.ConvertToSerializer;
@@ -63,12 +64,9 @@ public class BankController {
             dialogStage.close();
             try {
                 ioFileSerializable.Export(
-                        ConvertToSerializer.ConvertToBankSimpleList(this.store.getBanks()),"Bancos"
+                        ConvertToSerializer.ConvertToBankSimpleList(this.store.getBanks()), Path.BANKS.getPath()
                 );
-                Set<Bank> let = ConvertToSerializer.ConvertToBankList(
-                        ioFileSerializable.ImportBacks("Bancos")
-                );
-            } catch (IOException | ClassNotFoundException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
                 Alerts.Error(
                         "Un error ha ocurrido",

@@ -5,8 +5,8 @@ import java.io.*;
 import java.util.*;
 
 public class IOFileSerializable {
-    public boolean Export(Collection<Object> objects, String title) throws IOException {
-        try (ObjectOutputStream writeFile = new ObjectOutputStream(new FileOutputStream("/home/david/"+title+".acb")))
+    public boolean Export(Collection<Object> objects, String path) throws IOException {
+        try (ObjectOutputStream writeFile = new ObjectOutputStream(new FileOutputStream(path)))
         {
             for(Object o:objects.toArray())
                 writeFile.writeObject(o);
@@ -14,14 +14,18 @@ public class IOFileSerializable {
         return true;
     }
 
-    public Set<BankSimple> ImportBacks(String title) throws IOException, ClassNotFoundException {
-        try (FileInputStream fis = new FileInputStream("/home/david/"+title+".acb");
-                ObjectInputStream readFile = new ObjectInputStream(fis)){
-            Set<BankSimple> list = new HashSet<>();
-            while(fis.available() > 0) {
-                list.add((BankSimple)readFile.readObject());
+    Set<BankSimple> ImportBacks(String path) throws IOException, ClassNotFoundException {
+        File f = new File(path);
+        if (f.exists()){
+            try (FileInputStream fis = new FileInputStream(path);
+                 ObjectInputStream readFile = new ObjectInputStream(fis)){
+                Set<BankSimple> list = new HashSet<>();
+                while(fis.available() > 0) {
+                    list.add((BankSimple)readFile.readObject());
+                }
+                return list;
             }
-            return list;
         }
+        return new HashSet<BankSimple>();
     }
 }

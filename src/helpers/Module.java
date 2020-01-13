@@ -13,5 +13,6 @@ public class Module extends AbstractModule {
     protected void configure() {
         bind(Storage.class).in(Singleton.class);
         bind(IOFileSerializable.class);
+        bind(SavingService.class);
     }
 }

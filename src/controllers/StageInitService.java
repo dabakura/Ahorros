@@ -4,6 +4,7 @@ import com.google.inject.Injector;
 import controllers.Bank.BankController;
 import controllers.Calendar.CalendarController;
 import helpers.GuiceFXMLLoader;
+import helpers.SavingService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -30,11 +31,11 @@ public class StageInitService {
         // Ask to load the Calendar.fxml file, injecting an instance of a CalendarController
         Parent root = (Parent) loader.load("/views/Calendar/Calendar.fxml", CalendarController.class);
         // Finish constructing the scene
-        final Scene scene = new Scene(root, 1200, 700);
+        final Scene scene = new Scene(root, 1000, 800);
         // Load up the CSS stylesheet
         //scene.getStylesheets().add(getClass().getResource("fxmlapp.css").toString());
         // Show the window
-
+        injector.getInstance(SavingService.class).init();
         stage.setScene(scene);
         stage.setTitle("Ahorros");
         stage.show();
