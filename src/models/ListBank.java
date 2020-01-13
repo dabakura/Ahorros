@@ -98,4 +98,8 @@ public class ListBank implements Set<Bank> {
     public boolean ChangeSubscribe(IBanksObserver observer) {
         return OBSERVERS.add(observer);
     }
+
+    public List<Bank> getList(){
+        return new ArrayList<>(Banks);
+    }
 }

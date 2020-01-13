@@ -3,6 +3,7 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import controllers.Bank.BankController;
 import controllers.Calendar.CalendarController;
+import controllers.Coupon.CouponController;
 import helpers.GuiceFXMLLoader;
 import helpers.SavingService;
 import javafx.event.ActionEvent;
@@ -39,6 +40,24 @@ public class StageInitService {
         stage.setScene(scene);
         stage.setTitle("Ahorros");
         stage.show();
+    }
+
+    public static void ShowCoupon() {
+        // Ask to load the Bank.fxml file, injecting an instance of a BackController
+        Parent root = (Parent) loader.load("/views/Coupon/Coupon.fxml", CouponController.class);
+        // Finish constructing the scene
+        final Scene scene = new Scene(root, 500, 300);
+        // Create the dialog Stage.
+        Stage dialogStage = new Stage();
+        dialogStage.setScene(scene);
+        dialogStage.setTitle("Cupones");
+        dialogStage.setResizable(false);
+        // Get controller
+        FXMLLoader load = loader.getLoader();
+        CouponController controller = load.getController();
+        controller.setDialogStage(dialogStage);
+        // Show the window
+        dialogStage.show();
     }
 
     public static void ShowBank() {

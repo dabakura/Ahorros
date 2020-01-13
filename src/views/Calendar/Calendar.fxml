@@ -30,7 +30,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#ShowCreateBack" text="Crear Banco" />
                   <MenuItem mnemonicParsing="false" text="Eliminar Banco" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Agregar Cupón" />
+                  <MenuItem mnemonicParsing="false" onAction="#ShowCreateCoupon" text="Agregar Cupón" />
                   <MenuItem mnemonicParsing="false" text="Eliminar Cupón" />
                   <MenuItem mnemonicParsing="false" text="Paste" />
                   <MenuItem mnemonicParsing="false" text="Delete" />

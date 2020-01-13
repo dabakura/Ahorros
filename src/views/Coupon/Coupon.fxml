@@ -81,7 +81,7 @@
                         </AnchorPane>
                         <AnchorPane GridPane.columnIndex="1">
                             <children>
-                                <Spinner fx:id="spNumberCoupons" layoutX="-24.0" layoutY="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" />
+                                <Spinner fx:id="spNumberCoupons" layoutX="-24.0" layoutY="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" min="1" max="36" initialValue="12"/>
                             </children>
                         </AnchorPane>
                     </children>
@@ -106,7 +106,7 @@
                         </AnchorPane>
                         <AnchorPane prefWidth="200.0" GridPane.columnIndex="1">
                             <children>
-                                <Spinner fx:id="spMonthsCollect" layoutX="-30.0" layoutY="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" />
+                                <Spinner fx:id="spMonthsCollect" layoutX="-30.0" layoutY="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" min="1" max="12" initialValue="1"/>
                             </children>
                         </AnchorPane>
                     </children>

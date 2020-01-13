@@ -9,13 +9,17 @@ public class Coupon {
     private StringProperty startDate;
     private IntegerProperty numberCoupons;
     private DoubleProperty amount;
+    private IntegerProperty month;
+    private IntegerProperty day;
 
     public Coupon() {
         this.bank = new SimpleStringProperty();
-        this.monthsCollect = new SimpleIntegerProperty(0);
+        this.monthsCollect = new SimpleIntegerProperty(1);
         this.startDate = new SimpleStringProperty();
-        this.numberCoupons = new SimpleIntegerProperty(0);
+        this.numberCoupons = new SimpleIntegerProperty(12);
         this.amount = new SimpleDoubleProperty(0.0);
+        this.month = new SimpleIntegerProperty();
+        this.day = new SimpleIntegerProperty();
     }
 
     public String getBank() {
@@ -51,6 +55,9 @@ public class Coupon {
     }
 
     public void setStartDate(String startDate) {
+        String[] date = startDate.split("-");
+        this.day.setValue(Integer.valueOf(date[0]));
+        this.month.setValue(Integer.valueOf(date[1]));
         this.startDate.set(startDate);
     }
 
@@ -76,5 +83,13 @@ public class Coupon {
 
     public void setAmount(double amount) {
         this.amount.set(amount);
+    }
+
+    public int getMonth() {
+        return month.get();
+    }
+
+    public int getDay() {
+        return day.get();
     }
 }

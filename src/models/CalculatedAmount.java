@@ -19,7 +19,7 @@ public class CalculatedAmount {
         this.months = new SimpleIntegerProperty(0);
         this.total = new SimpleDoubleProperty(0.0);
         this.capitalizable = new SimpleDoubleProperty(0.0);
-        this.iva = new SimpleDoubleProperty(0.0);
+        this.iva = new SimpleDoubleProperty(7.0);
     }
 
     public double getCapitalizable() {

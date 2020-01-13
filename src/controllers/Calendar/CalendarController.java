@@ -84,4 +84,6 @@ public class CalendarController {
         Snapshot.CaptureAndSaveDisplay(this.Principal_Content, this.month.getMonth());
     }
 
+    @FXML
+    public void ShowCreateCoupon(ActionEvent actionEvent) {StageInitService.ShowCoupon();}
 }
