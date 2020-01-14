@@ -3,7 +3,9 @@ package helpers;
 import java.io.File;
 
 public enum Path {
-    BANKS("/Bank.acb");
+    BANKS("/Bank.acb"),
+    COUPONS("/Ahorros.json");
+
     private String path;
 
     Path(String path){

@@ -17,14 +17,11 @@
               <Menu mnemonicParsing="false" text="Archivo">
                   <MenuItem mnemonicParsing="false" onAction="#NewAction" text="Nuevo" />
                   <MenuItem mnemonicParsing="false" text="Abrir…" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Cerrar" />
-                  <MenuItem mnemonicParsing="false" text="Salvar" />
-                  <MenuItem mnemonicParsing="false" text="Salvar Como" />
+                  <MenuItem mnemonicParsing="false" onAction="#Save" text="Salvar" />
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" onAction="#Print" text="Imprimir" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Salir" />
+                  <MenuItem mnemonicParsing="false" onAction="#ExitAction" text="Salir" />
               </Menu>
               <Menu mnemonicParsing="false" text="Opciones">
                   <MenuItem mnemonicParsing="false" onAction="#ShowCreateBack" text="Crear Banco" />

@@ -8,7 +8,6 @@ public class CalendarItem {
     private int _index;
     private String _day;
     private Boolean _title;
-    private Boolean _active;
     private final List<ModelCalendarComponent> _models;
 
     public CalendarItem() {
@@ -16,11 +15,10 @@ public class CalendarItem {
         reset();
     }
 
-    public CalendarItem(int index, Boolean title, Boolean active) {
+    public CalendarItem(int index, Boolean title) {
         _index = index;
         _day = _index==0 ? "" : index + "";
         _title = title;
-        _active = active;
         _models = new ArrayList<>();
     }
 
@@ -28,7 +26,6 @@ public class CalendarItem {
         _index = index;
         _day = _index==0 ? "" : index + "";
         _title = title;
-        _active = true;
         _models = new ArrayList<>();
         _models.addAll(Arrays.asList(models));
     }
@@ -37,7 +34,6 @@ public class CalendarItem {
         _index = 0;
         _day = "";
         _title = false;
-        _active = false;
         _models.clear();
     }
 
@@ -54,11 +50,7 @@ public class CalendarItem {
     }
 
     public Boolean get_active() {
-        return _active;
-    }
-
-    public void set_active(Boolean active) {
-        this._active = active;
+        return !_models.isEmpty();
     }
 
     public int get_index() {

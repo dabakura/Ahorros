@@ -64,6 +64,9 @@ public class CouponController {
     @FXML
     private TextField tfTotal;
 
+    @FXML
+    private TextField tfCCapital;
+
     private Stage dialogStage;
 
     /**
@@ -114,6 +117,8 @@ public class CouponController {
         cbBank.setPromptText("Seleccione la Entidad");
         tfAmount.textProperty().bindBidirectional(this.coupon.amountProperty(), convertNumberString());
         tfAmount.textProperty().addListener(ChangeListenerDoubleString(tfAmount));
+        tfCCapital.textProperty().bindBidirectional(this.coupon.capitalProperty(), convertNumberString());
+        tfCCapital.textProperty().addListener(ChangeListenerIntegerString(tfCCapital));
         tfIva.textProperty().bindBidirectional(this.calculatedAmount.ivaProperty(), convertNumberString());
         tfIva.textProperty().addListener(ChangeListenerDoubleString(tfIva));
         tfCapitalizable.textProperty().bindBidirectional(this.calculatedAmount.capitalizableProperty(), convertNumberString());
@@ -184,17 +189,19 @@ public class CouponController {
     }
 
     private boolean CouponIsValid(){
-        return (BankIsValid() && !(this.coupon.getBank()).isEmpty() && this.coupon.getAmount() != 0.0  );
+        return (BankIsValid() && !(this.coupon.getBank()).isEmpty() && this.coupon.getAmount() != 0.0  && this.coupon.getCapital() != 0);
     }
 
     @FXML
     void Calculated(ActionEvent event) {
         double interest_net = (((double) calculatedAmount.getCapital() * (calculatedAmount.getInterest()/100))/ (double) calculatedAmount.getMonths());
         double interest_gross = (interest_net - ((interest_net+calculatedAmount.getCapitalizable())*(calculatedAmount.getIva()/100)));
+        if (((Double) interest_gross).isNaN()) return;
         BigDecimal rounding = new BigDecimal(interest_gross).setScale(2, RoundingMode.HALF_UP);
         interest_gross = rounding.doubleValue();
         calculatedAmount.setTotal(interest_gross);
         coupon.setAmount(interest_gross);
+        coupon.setCapital(calculatedAmount.getCapital());
     }
 
     @FXML
@@ -208,6 +215,7 @@ public class CouponController {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
             this.coupon.setStartDate(dpStartDate.getValue().format(formatter));
             this.store.getCalendarMatrix().setCoupon(this.coupon);
+            dialogStage.close();
         }
     }
 

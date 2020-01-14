@@ -4,10 +4,8 @@ import com.google.inject.Inject;
 import controllers.StageInitService;
 import helpers.GuiceFXMLLoader;
 import helpers.Snapshot;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.SnapshotParameters;
-import javafx.scene.image.WritableImage;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import models.CalendarItem;
 import models.Storage;
 import helpers.Month;
@@ -33,6 +31,9 @@ public class CalendarController {
     private final Storage store;
 
     private Month month = Month.JANUARY;
+
+    private Stage stage;
+
     /**
      * Notice this constructor is using JSR 330 Inject annotation,
      * which makes it "Guice Friendly".
@@ -41,6 +42,14 @@ public class CalendarController {
     @Inject
     public CalendarController(Storage store) {
         this.store = store;
+    }
+
+    @FXML
+    public void initialize() {
+        month = Month.JANUARY;
+        this.stage = StageInitService.stage;
+        this.store.getCalendarMatrix().Initialize();
+        Reset();
     }
 
     @FXML
@@ -62,6 +71,29 @@ public class CalendarController {
             month = Month.JANUARY;
             this.store.getCalendarMatrix().Initialize();
         } else this.store.getCalendarMatrix().NewMonthSelected();
+        Reset();
+    }
+
+    @FXML
+    void Test(ActionEvent event) {
+        this.store.getCalendarMatrix().Test();
+    }
+
+    @FXML
+    void Print(ActionEvent event) {
+        Snapshot.CaptureAndSaveDisplay(this.Principal_Content, this.month.getMonth());
+    }
+
+
+    public void ShowCreateCoupon(ActionEvent actionEvent) {StageInitService.ShowCoupon();}
+
+    @FXML
+    public void ExitAction(ActionEvent actionEvent)  {
+        stage.close();
+    }
+
+    private void  Reset()
+    {
         CalendarItem[][] matrix = this.store.getCalendarMatrix().getCalendarMatrix(month);
         container_grid.getChildren().clear();
         GuiceFXMLLoader loader = StageInitService.GetLoader();
@@ -75,15 +107,7 @@ public class CalendarController {
     }
 
     @FXML
-    void Test(ActionEvent event) {
-        this.store.getCalendarMatrix().Test();
+    public void Save(ActionEvent actionEvent) {
+        this.store.getCalendarMatrix().save();
     }
-
-    @FXML
-    void Print(ActionEvent event) {
-        Snapshot.CaptureAndSaveDisplay(this.Principal_Content, this.month.getMonth());
-    }
-
-    @FXML
-    public void ShowCreateCoupon(ActionEvent actionEvent) {StageInitService.ShowCoupon();}
 }

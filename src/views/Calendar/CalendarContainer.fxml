@@ -18,13 +18,13 @@
         <RowConstraints vgrow="SOMETIMES" />
     </rowConstraints>
     <VBox fx:id="vbox_0" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
-        <FlowPane prefHeight="38.0" prefWidth="172.0">
+        <FlowPane>
             <VBox.margin>
                 <Insets />
             </VBox.margin>
             <Label fx:id="dia0">
                 <font>
-                    <Font size="25.0" />
+                    <Font size="20.0" />
                 </font>
                 <opaqueInsets>
                     <Insets />
@@ -35,19 +35,19 @@
             </Label>
             <Label fx:id="titulo0">
                 <font>
-                    <Font size="25.0" />
+                    <Font size="20.0" />
                 </font>
             </Label>
         </FlowPane>
     </VBox>
     <VBox fx:id="vbox_1" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
-        <FlowPane prefHeight="38.0" prefWidth="172.0">
+        <FlowPane>
             <VBox.margin>
                 <Insets />
             </VBox.margin>
             <Label fx:id="dia1">
                 <font>
-                    <Font size="25.0" />
+                    <Font size="20.0" />
                 </font>
                 <opaqueInsets>
                     <Insets />
@@ -58,19 +58,19 @@
             </Label>
             <Label fx:id="titulo1">
                 <font>
-                    <Font size="25.0" />
+                    <Font size="20.0" />
                 </font>
             </Label>
         </FlowPane>
     </VBox>
     <VBox fx:id="vbox_2" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
-        <FlowPane prefHeight="38.0" prefWidth="172.0">
+        <FlowPane>
             <VBox.margin>
                 <Insets />
             </VBox.margin>
             <Label fx:id="dia2">
                 <font>
-                    <Font size="25.0" />
+                    <Font size="20.0" />
                 </font>
                 <opaqueInsets>
                     <Insets />
@@ -81,19 +81,19 @@
             </Label>
             <Label fx:id="titulo2">
                 <font>
-                    <Font size="25.0" />
+                    <Font size="20.0" />
                 </font>
             </Label>
         </FlowPane>
     </VBox>
     <VBox fx:id="vbox_3" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
-        <FlowPane prefHeight="38.0" prefWidth="172.0">
+        <FlowPane>
             <VBox.margin>
                 <Insets />
             </VBox.margin>
             <Label fx:id="dia3">
                 <font>
-                    <Font size="25.0" />
+                    <Font size="20.0" />
                 </font>
                 <opaqueInsets>
                     <Insets />
@@ -104,19 +104,19 @@
             </Label>
             <Label fx:id="titulo3">
                 <font>
-                    <Font size="25.0" />
+                    <Font size="20.0" />
                 </font>
             </Label>
         </FlowPane>
     </VBox>
     <VBox fx:id="vbox_4" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
-        <FlowPane prefHeight="38.0" prefWidth="172.0">
+        <FlowPane>
             <VBox.margin>
                 <Insets />
             </VBox.margin>
             <Label fx:id="dia4">
                 <font>
-                    <Font size="25.0" />
+                    <Font size="20.0" />
                 </font>
                 <opaqueInsets>
                     <Insets />
@@ -127,19 +127,19 @@
             </Label>
             <Label fx:id="titulo4">
                 <font>
-                    <Font size="25.0" />
+                    <Font size="20.0" />
                 </font>
             </Label>
         </FlowPane>
     </VBox>
     <VBox fx:id="vbox_5" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="5" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
-        <FlowPane prefHeight="38.0" prefWidth="172.0">
+        <FlowPane>
             <VBox.margin>
                 <Insets />
             </VBox.margin>
             <Label fx:id="dia5">
                 <font>
-                    <Font size="25.0" />
+                    <Font size="20.0" />
                 </font>
                 <opaqueInsets>
                     <Insets />
@@ -150,7 +150,7 @@
             </Label>
             <Label fx:id="titulo5">
                 <font>
-                    <Font size="25.0" />
+                    <Font size="20.0" />
                 </font>
             </Label>
         </FlowPane>

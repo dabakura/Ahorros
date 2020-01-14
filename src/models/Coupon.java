@@ -11,6 +11,7 @@ public class Coupon {
     private DoubleProperty amount;
     private IntegerProperty month;
     private IntegerProperty day;
+    private IntegerProperty capital;
 
     public Coupon() {
         this.bank = new SimpleStringProperty();
@@ -18,8 +19,20 @@ public class Coupon {
         this.startDate = new SimpleStringProperty();
         this.numberCoupons = new SimpleIntegerProperty(12);
         this.amount = new SimpleDoubleProperty(0.0);
+        this.capital = new SimpleIntegerProperty(0);
         this.month = new SimpleIntegerProperty();
         this.day = new SimpleIntegerProperty();
+    }
+
+    public Coupon(CouponSimple cs) {
+        this.bank = new SimpleStringProperty(cs.getBank());
+        this.monthsCollect = new SimpleIntegerProperty(cs.getMonthsCollect());
+        this.startDate = new SimpleStringProperty(cs.getStartDate());
+        this.numberCoupons = new SimpleIntegerProperty(cs.getNumberCoupons());
+        this.amount = new SimpleDoubleProperty(cs.getAmount());
+        this.capital = new SimpleIntegerProperty(cs.getCapital());
+        this.month = new SimpleIntegerProperty(cs.getMonth());
+        this.day = new SimpleIntegerProperty(cs.getDay());
     }
 
     public String getBank() {
@@ -91,5 +104,17 @@ public class Coupon {
 
     public int getDay() {
         return day.get();
+    }
+
+    public int getCapital() {
+        return capital.get();
+    }
+
+    public IntegerProperty capitalProperty() {
+        return capital;
+    }
+
+    public void setCapital(int capital) {
+        this.capital.set(capital);
     }
 }

@@ -14,7 +14,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
 import javafx.stage.Stage;
 import helpers.Module;
-import models.MatrixCalendar;
+
 
 /**
  * @author David
@@ -28,17 +28,21 @@ public class StageInitService {
         return loader;
     }
 
+    public static Stage stage;
+
     public void init(Stage stage) {
+        // Set primary stage
+        StageInitService.stage = stage;
         // Ask to load the Calendar.fxml file, injecting an instance of a CalendarController
         Parent root = (Parent) loader.load("/views/Calendar/Calendar.fxml", CalendarController.class);
         // Finish constructing the scene
-        final Scene scene = new Scene(root, 1000, 800);
+        final Scene scene = new Scene(root, 1200, 840);
         // Load up the CSS stylesheet
         //scene.getStylesheets().add(getClass().getResource("fxmlapp.css").toString());
-        // Show the window
         injector.getInstance(SavingService.class).init();
         stage.setScene(scene);
         stage.setTitle("Ahorros");
+        // Show the window
         stage.show();
     }
 

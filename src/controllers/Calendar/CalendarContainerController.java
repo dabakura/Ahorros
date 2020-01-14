@@ -108,7 +108,7 @@ public class CalendarContainerController implements ICalendarObserver {
             models.get(i).getContent().setText("");
             if (matrix[i][this.position].get_active()){
                 if(matrix[i][this.position].get_title())
-                    models.get(i).getContent().setText("Titulo");
+                    models.get(i).getContent().setText("Titulos");
             }
             models.get(i).getTitle().setText(matrix[i][this.position].get_day());
             bodyFill(matrix[i][this.position].get_models(),i);
